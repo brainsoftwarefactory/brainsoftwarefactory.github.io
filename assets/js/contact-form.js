@@ -5,10 +5,9 @@
 (function () {
   "use strict";
 
-  // Producción: usar el path /webhook/ (no /webhook-test/, que solo responde
-  // con el editor de n8n abierto y "Listen for test event" activo).
-  const WEBHOOK_URL =
-    "https://n8ndev.brain.com.ar/webhook/aaff6892-80e6-47ae-8d04-b7ddf5972ad1";
+  // Producción: workflow "Contacto web brain.com.ar" en n8n
+  // (webhook.brain.com.ar → crea la conversación en Chatwoot, inbox "Sitio web").
+  const WEBHOOK_URL = "https://webhook.brain.com.ar/webhook/contacto-web";
 
   const form = document.getElementById("contact-form");
   if (!form) return;

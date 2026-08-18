@@ -22,8 +22,11 @@ las tareas de tu operación — 24/7, sobre infraestructura dedicada.
 ## Sitio
 
 Landing de una sola página más la política de privacidad, sin dependencias de
-frameworks. HTML + CSS + JS vanilla con separación de responsabilidades,
-tipografía web, formulario de contacto y widget de chat conectados a n8n.
+frameworks. HTML + CSS + JS vanilla con separación de responsabilidades y
+tipografía web. El chat es el widget oficial de Chatwoot
+(`chatwoot.brain.com.ar`, inbox «Sitio web») y el formulario envía a n8n
+(`webhook.brain.com.ar/webhook/contacto-web`), que crea la conversación en el
+inbox «Formulario web» de Chatwoot. Todo corre en la VPS de producción.
 
 ## Estructura
 
@@ -36,8 +39,7 @@ brainsoftwarefactory.github.io/
 │   │   └── main.css           # Design system + estilos de ambas páginas
 │   ├── js/
 │   │   ├── app.js             # Menú mobile + reveals on-scroll
-│   │   ├── contact-form.js    # Envío del formulario (webhook n8n)
-│   │   └── chat-widget.js     # Widget de chat (webhook n8n)
+│   │   └── contact-form.js    # Envío del formulario (webhook n8n → Chatwoot)
 │   └── img/
 │       ├── brain-logo.png     # Logo / favicon / imagen social
 │       └── clients/           # Logos de clientes (tinta clara, fondo oscuro)
