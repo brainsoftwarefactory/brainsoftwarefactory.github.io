@@ -822,7 +822,8 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.028em; line-height: 1.06; text
 
 /* Marco de la ventana de Chatwoot (el contenedor vive en esta página;
    el interior es un iframe y se tiñe con el widget_color del inbox) */
-.woot-widget-holder {
+.woot-widget-holder,
+.woot-widget-holder.woot-widget--without-bubble {
   right: 24px !important;
   bottom: 98px !important;
   border: 1px solid var(--line-2) !important;
