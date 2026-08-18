@@ -35,6 +35,9 @@ jobs:
             --exclude='.git' \
             --exclude='.github' \
             --exclude='.superpowers' \
+            --exclude='.atl' \
+            --exclude='docs' \
+            --exclude='README.md' \
             --exclude='_site' \
             ./ _site/
 

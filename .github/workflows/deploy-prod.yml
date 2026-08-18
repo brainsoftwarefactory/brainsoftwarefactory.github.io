@@ -32,10 +32,13 @@ jobs:
       # rrsync mapea el destino ":/" a la carpeta restringida /root/brain-landing.
       - name: Deploy (rsync a /root/brain-landing)
         run: |
-          rsync -az --delete \
+          rsync -az --delete --delete-excluded \
             --exclude='.git' \
             --exclude='.github' \
             --exclude='.superpowers' \
+            --exclude='.atl' \
+            --exclude='docs' \
+            --exclude='README.md' \
             -e "ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes" \
             ./ root@167.86.86.163:/
 
