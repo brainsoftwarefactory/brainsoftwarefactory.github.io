@@ -789,6 +789,55 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.028em; line-height: 1.06; text
 .foot-legal a { color: var(--ink-dim); }
 .foot-legal a:hover { color: var(--ink-soft); }
 
+/* ═══════════════ CHAT (Chatwoot) ═══════════════ */
+/* Lanzador propio — aparece recién cuando el SDK está listo */
+.chat-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #04070D;
+  box-shadow: 0 12px 32px -8px rgba(0, 152, 255, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), background-color 0.16s var(--ease);
+}
+.chat-launcher.is-ready { opacity: 1; pointer-events: auto; transform: none; }
+.chat-launcher:hover { background: #2BA7FF; }
+.chat-launcher:active { transform: scale(0.94); }
+.chat-launcher .ico-close { display: none; }
+.chat-launcher.is-open .ico-chat { display: none; }
+.chat-launcher.is-open .ico-close { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .chat-launcher { transition: none; transform: none; }
+}
+
+/* Marco de la ventana de Chatwoot (el contenedor vive en esta página;
+   el interior es un iframe y se tiñe con el widget_color del inbox) */
+.woot-widget-holder {
+  right: 24px !important;
+  bottom: 98px !important;
+  border: 1px solid var(--line-2) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.8) !important;
+  overflow: hidden !important;
+}
+.woot-widget-holder iframe { border-radius: 17px; }
+/* red de seguridad: el globo default nunca se muestra */
+.woot-widget-bubble { display: none !important; }
+
+@media (max-width: 560px) {
+  .chat-launcher { right: 16px; bottom: 16px; }
+}
+
 /* ═══════════════ RESPONSIVE ═══════════════ */
 @media (max-width: 1080px) {
   :root { --pad-x: 40px; }
