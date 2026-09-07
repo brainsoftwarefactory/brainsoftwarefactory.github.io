@@ -39,7 +39,7 @@
     "logo": "https://brain.com.ar/assets/img/brain-logo.png",
     "description": "Agentes de IA a medida para atención al cliente y automatización de tareas.",
     "email": "ventas@brain.com.ar",
-    "telephone": "+54-11-6050-7276",
+    "telephone": "+54-9-11-7065-1142",
     "areaServed": "AR",
     "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" }
   }
@@ -63,7 +63,7 @@
   <!-- ═══════════════ NAV ═══════════════ -->
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
-      <a href="#" class="brand" aria-label="Brain, inicio">
+      <a href="/" class="brand" aria-label="Brain, inicio">
         <img src="assets/img/brain-logo.png" alt="" width="32" height="32">
         <span>Brain</span>
       </a>
@@ -85,7 +85,7 @@
   <main>
 
     <!-- ═══════════════ HERO ═══════════════ -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="grid-bg" aria-hidden="true"></div>
       <div class="orb orb-1" aria-hidden="true"></div>
 
@@ -99,7 +99,7 @@
               Pedir diagnóstico
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h13m-5.5-5.5L18 12l-5.5 5.5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a href="https://wa.me/541160507276?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-ghost">
+            <a href="https://wa.me/5491170651142?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20para%20mi%20negocio" target="_blank" rel="noopener" class="btn btn-ghost">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3.5c-4.7 0-8.5 3.2-8.5 7.2 0 2.3 1.3 4.4 3.3 5.7l-.6 3.6 3.6-1.7c.7.2 1.4.3 2.2.3 4.7 0 8.5-3.2 8.5-7.2S16.7 3.5 12 3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
               Escribir por WhatsApp
             </a>
@@ -107,36 +107,10 @@
           <p class="hero-note reveal in">Sin costo · Sin compromiso · Respondemos en menos de 24 h</p>
         </div>
 
-        <!-- panel mock -->
-        <div class="panel reveal" aria-hidden="true">
-          <div class="panel-bar">
-            <div class="panel-dots"><span></span><span></span><span></span></div>
-            <span class="panel-url">panel.tumarca.com</span>
-          </div>
-          <div class="panel-body">
-            <div class="panel-stats">
-              <div class="stat">
-                <p class="stat-label">Conversaciones</p>
-                <p class="stat-value">248</p>
-              </div>
-              <div class="stat">
-                <p class="stat-label">Sin intervención humana</p>
-                <p class="stat-value blue">100<small>%</small></p>
-              </div>
-              <div class="stat">
-                <p class="stat-label">Turnos hoy</p>
-                <p class="stat-value">37</p>
-              </div>
-            </div>
-            <div class="panel-table">
-              <div class="trow thead"><span>Hora</span><span>Canal</span><span>Cliente · Tema</span><span>Estado</span></div>
-              <div class="trow"><span class="t-time">14:32</span><span class="t-chan">WhatsApp</span><span class="t-subj">María L. · Turno hiperhidrosis</span><span class="chip chip-mute">En curso</span></div>
-              <div class="trow"><span class="t-time">14:18</span><span class="t-chan">Web</span><span class="t-subj">Bruno R. · Consulta precios</span><span class="chip chip-ok">Resuelto</span></div>
-              <div class="trow"><span class="t-time">13:55</span><span class="t-chan">WhatsApp</span><span class="t-subj">Carla M. · Reprogramar turno</span><span class="chip chip-ok">Resuelto</span></div>
-              <div class="trow"><span class="t-time">13:40</span><span class="t-chan">Web</span><span class="t-subj">Diego A. · Presupuesto</span><span class="chip chip-ok">Resuelto</span></div>
-              <div class="trow"><span class="t-time">13:12</span><span class="t-chan">WhatsApp</span><span class="t-subj">Sofía T. · Nuevo turno</span><span class="chip chip-ok">Resuelto</span></div>
-            </div>
-          </div>
+        <!-- hero visual · red neuronal 3D -->
+        <div class="hero-visual reveal in" aria-hidden="true">
+          <div class="brain-fallback" id="brainFallback"></div>
+          <canvas id="brain3d"></canvas>
         </div>
       </div>
     </section>
@@ -147,9 +121,6 @@
         <p class="clients-label">Confían en Brain</p>
         <div class="clients-logos">
           <div class="logo-card"><img src="assets/img/clients/botulinic.png" alt="Botulinic"></div>
-          <div class="logo-slot" aria-hidden="true">[ próximo ]</div>
-          <div class="logo-slot" aria-hidden="true">[ próximo ]</div>
-          <div class="logo-slot" aria-hidden="true">[ próximo ]</div>
         </div>
         <div class="clients-stats">
           <div class="mini-stat"><p>100%</p><p>sin intervención humana</p></div>
@@ -495,7 +466,7 @@
               <span class="ico" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3.5c-4.7 0-8.5 3.2-8.5 7.2 0 2.3 1.3 4.4 3.3 5.7l-.6 3.6 3.6-1.7c.7.2 1.4.3 2.2.3 4.7 0 8.5-3.2 8.5-7.2S16.7 3.5 12 3.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
               <div>
                 <p class="k">WhatsApp</p>
-                <p class="v"><a href="https://wa.me/541160507276?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20para%20mi%20negocio" target="_blank" rel="noopener">+54 11 6050-7276</a></p>
+                <p class="v"><a href="https://wa.me/5491170651142?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20para%20mi%20negocio" target="_blank" rel="noopener">+54 9 11 7065-1142</a></p>
               </div>
             </li>
             <li>
@@ -558,7 +529,7 @@
     <div class="wrap">
       <div class="foot-grid">
         <div class="foot-brand">
-          <a href="#" class="brand" aria-label="Brain, inicio">
+          <a href="/" class="brand" aria-label="Brain, inicio">
             <img src="assets/img/brain-logo.png" alt="" width="28" height="28">
             <span>Brain</span>
           </a>
@@ -585,7 +556,7 @@
         <div class="foot-col">
           <p class="k">Contacto</p>
           <ul>
-            <li><a href="https://wa.me/541160507276" target="_blank" rel="noopener">+54 11 6050-7276</a></li>
+            <li><a href="https://wa.me/5491170651142" target="_blank" rel="noopener">+54 9 11 7065-1142</a></li>
             <li><a href="mailto:ventas@brain.com.ar">ventas@brain.com.ar</a></li>
             <li><span>Buenos Aires, Argentina</span></li>
             <li><span>Lun a Vie · 9 a 18 h</span></li>
@@ -630,6 +601,7 @@
   <!-- ═══════════════ SCRIPTS ═══════════════ -->
   <script src="assets/js/app.js"></script>
   <script src="assets/js/contact-form.js"></script>
+  <script src="assets/js/brain3d.js"></script>
 
 </body>
 </html>
