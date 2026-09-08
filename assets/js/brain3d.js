@@ -35,7 +35,7 @@
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
-    camera.position.set(0, 0, 3.65);
+    camera.position.set(0, 0, 3.0);
 
     const group = new THREE.Group();
     scene.add(group);

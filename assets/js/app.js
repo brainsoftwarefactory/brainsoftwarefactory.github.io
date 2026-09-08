@@ -45,6 +45,33 @@
     chatState.observe(document.body, { attributes: true, subtree: true, attributeFilter: ["class"] });
   }
 
+  /* ─── qué automatizamos · filtro por rubro ─── */
+  const taskGrid = document.getElementById("taskGrid");
+  if (taskGrid) {
+    const filters = document.querySelectorAll(".task-filter");
+    const tasks = taskGrid.querySelectorAll(".task");
+
+    function applyRubro(rubro) {
+      tasks.forEach(function (task) {
+        const tags = (task.dataset.rubro || "").split(" ");
+        // las tareas marcadas "todos" le sirven a cualquier rubro
+        task.hidden = rubro !== "todos" &&
+          tags.indexOf(rubro) === -1 && tags.indexOf("todos") === -1;
+      });
+    }
+
+    filters.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        filters.forEach(function (b) {
+          const on = b === btn;
+          b.classList.toggle("is-active", on);
+          b.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        applyRubro(btn.dataset.rubro);
+      });
+    });
+  }
+
   /* ─── reveals ─── */
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const reveals = document.querySelectorAll(".reveal");

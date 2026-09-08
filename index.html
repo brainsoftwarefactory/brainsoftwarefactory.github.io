@@ -69,7 +69,7 @@
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Secciones">
         <a href="#agentes">Agentes</a>
-        <a href="#caso">Caso real</a>
+        <a href="#tareas">Qué automatizamos</a>
         <a href="#proceso">Cómo trabajamos</a>
         <a href="#preguntas">Preguntas</a>
       </nav>
@@ -123,7 +123,7 @@
           <div class="logo-card"><img src="assets/img/clients/botulinic.png" alt="Botulinic"></div>
         </div>
         <div class="clients-stats">
-          <div class="mini-stat"><p>100%</p><p>sin intervención humana</p></div>
+          <div class="mini-stat"><p>100%</p><p>sin intervención humana <span>en un agente en producción</span></p></div>
           <div class="mini-stat"><p>24/7</p><p>sin pausa</p></div>
         </div>
       </div>
@@ -217,7 +217,6 @@
           </div>
         </div>
 
-        <p class="verticals reveal">Operando en salud y estética · ecommerce · gastronomía · servicios · inmobiliaria</p>
       </div>
     </section>
 
@@ -256,102 +255,108 @@
       </div>
     </section>
 
-    <!-- ═══════════════ CASO BOTULINIC ═══════════════ -->
-    <section class="section band case" id="caso">
-      <div class="orb orb-3" aria-hidden="true"></div>
-      <div class="wrap case-inner">
-
-        <div class="case-top">
-          <div class="section-head reveal">
-            <p class="eyebrow">Caso en producción · Salud y estética médica</p>
-            <h2 class="h2">Un agente de IA opera dos sedes,<br>sin intervención humana.</h2>
-          </div>
-          <div class="case-badge reveal">
-            <img src="assets/img/clients/botulinic.png" alt="Botulinic">
-            <span class="sep" aria-hidden="true"></span>
-            <div>
-              <p class="k">En producción</p>
-              <p class="v">desde marzo 2026</p>
-            </div>
-          </div>
+    <!-- ═══════════════ QUÉ AUTOMATIZAMOS ═══════════════ -->
+    <section class="section band tasks" id="tareas">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="eyebrow">Qué automatizamos</p>
+          <h2 class="h2">Todo esto ya lo puede hacer un agente.</h2>
+          <p class="lead">Tareas concretas que hoy le comen el día a tu equipo. Elegí tu rubro y fijate cuántas te suenan.</p>
         </div>
 
-        <div class="case-metrics">
-          <div class="metric hl reveal">
-            <p class="big">100<small>%</small></p>
-            <p>de las consultas resueltas sin intervención humana</p>
-          </div>
-          <div class="metric reveal">
-            <p class="big">24/7</p>
-            <p>disponibilidad continua, sin ventanas de corte</p>
-          </div>
-          <div class="metric reveal">
-            <p class="big">2</p>
-            <p>sedes sincronizadas en tiempo real</p>
-          </div>
-          <div class="metric reveal">
-            <p class="big">0</p>
-            <p>consultas sin responder desde el despliegue</p>
-          </div>
+        <div class="task-filters reveal" role="tablist" aria-label="Filtrar por rubro">
+          <button type="button" class="task-filter is-active" data-rubro="todos" role="tab" aria-selected="true">Todos</button>
+          <button type="button" class="task-filter" data-rubro="salud" role="tab" aria-selected="false">Salud y estética</button>
+          <button type="button" class="task-filter" data-rubro="ecommerce" role="tab" aria-selected="false">Ecommerce</button>
+          <button type="button" class="task-filter" data-rubro="gastronomia" role="tab" aria-selected="false">Gastronomía</button>
+          <button type="button" class="task-filter" data-rubro="servicios" role="tab" aria-selected="false">Servicios</button>
+          <button type="button" class="task-filter" data-rubro="inmobiliaria" role="tab" aria-selected="false">Inmobiliaria</button>
         </div>
 
-        <div class="case-cols">
-          <div class="prose reveal">
-            <p>Botulinic es una clínica de estética médica con sedes en Recoleta y Nordelta. Su agente de IA corre sobre infraestructura cloud dedicada y atiende el canal completo: responde por WhatsApp y por el sitio web a cualquier hora, agenda, reprograma y cancela turnos con sincronización en tiempo real contra el calendario, y coordina las dos sedes desde un mismo sistema.</p>
-            <p>Ejecuta recordatorios automáticos y campañas de re-contacto a los seis meses. El escalamiento a un operador humano está disponible para los casos que lo requieran, con traspaso de contexto completo.</p>
-
-            <p class="case-list-label">Qué opera el agente</p>
-            <ul class="case-checks">
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Alta, cambio y baja de turnos</li>
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Sincronización con Google Calendar</li>
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ruteo entre las dos sedes</li>
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Recordatorios y re-contacto</li>
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>WhatsApp y web en un solo hilo</li>
-              <li><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Escalamiento con contexto</li>
-            </ul>
-
-          </div>
-
-          <div class="reveal">
-            <!-- chat mock -->
-            <div class="chat-mock" aria-hidden="true">
-              <div class="chat-mock-head">
-                <div class="chat-mock-avatar">
-                  <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3.5c-3.6 0-6.5 2.6-6.5 5.9 0 1.5.6 2.9 1.6 4v3.1c0 2.2 2.2 4 4.9 4s4.9-1.8 4.9-4v-3.1c1-1.1 1.6-2.5 1.6-4 0-3.3-2.9-5.9-6.5-5.9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-                </div>
-                <div class="who">
-                  <p>Agente de IA</p>
-                  <p>Botulinic · WhatsApp</p>
-                </div>
-                <span class="chat-live">Activo</span>
-              </div>
-              <div class="chat-mock-body">
-                <div class="msg user">Hola, quería un turno para hiperhidrosis</div>
-                <div class="msg bot">¡Hola! En la sede de Recoleta tengo jueves a las 14:30. ¿Te lo reservo?</div>
-                <div class="msg user">Sí, dale</div>
-                <div class="msg-confirm">
-                  <span class="ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4.5 12.5l4.8 4.8L19.5 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                  <div>
-                    <strong>Turno confirmado · Jue 14:30 · Recoleta</strong>
-                    <span>sincronizado al calendario · recordatorio programado</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- infraestructura -->
-            <div class="infra-card">
-              <p class="label">Infraestructura del despliegue</p>
-              <ul>
-                <li><span>Entorno</span><span>Cloud dedicado</span></li>
-                <li><span>Canales</span><span>WhatsApp · Web</span></li>
-                <li><span>Datos</span><span>Cifrados · backup diario</span></li>
-                <li><span>Monitoreo</span><span>Continuo, con alertas</span></li>
-              </ul>
-            </div>
-          </div>
+        <div class="task-grid reveal" id="taskGrid">
+          <article class="task" data-lane="att" data-rubro="todos">
+            <span class="task-lane att">Atiende</span>
+            <p>Responde “¿a qué hora abren?” a las 2 de la mañana, sin despertar a nadie.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="salud servicios">
+            <span class="task-lane att">Atiende</span>
+            <p>Saca, reprograma y cancela turnos contra tu calendario, en el momento.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="salud servicios">
+            <span class="task-lane att">Atiende</span>
+            <p>Recuerda el turno el día anterior y libera el lugar si la persona no puede.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="ecommerce">
+            <span class="task-lane att">Atiende</span>
+            <p>Le dice al cliente dónde está su pedido sin que nadie abra el sistema.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="gastronomia">
+            <span class="task-lane att">Atiende</span>
+            <p>Toma la reserva, confirma la mesa y avisa si se libera un lugar.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="ecommerce">
+            <span class="task-lane att">Atiende</span>
+            <p>Retoma el carrito abandonado con el producto que la persona estaba mirando.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="inmobiliaria">
+            <span class="task-lane att">Atiende</span>
+            <p>Filtra al interesado —zona, presupuesto, si necesita crédito— antes de pasártelo.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="inmobiliaria">
+            <span class="task-lane att">Atiende</span>
+            <p>Coordina la visita a la propiedad y manda la ubicación.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="todos">
+            <span class="task-lane att">Atiende</span>
+            <p>Contesta lo de siempre: qué incluye, cómo llegar, qué formas de pago hay.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="salud">
+            <span class="task-lane att">Atiende</span>
+            <p>Explica la preparación previa y qué llevar, las veces que haga falta.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="servicios">
+            <span class="task-lane att">Atiende</span>
+            <p>Abre el reclamo, le pone número y avisa al cliente cada vez que avanza.</p>
+          </article>
+          <article class="task" data-lane="att" data-rubro="todos">
+            <span class="task-lane att">Atiende</span>
+            <p>Pasa la conversación a una persona, con todo el contexto, cuando el caso lo pide.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="todos">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Arma el reporte del lunes y lo manda al que lo tiene que leer.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="todos">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Carga los datos en tu sistema y te avisa cuando algo no cuadra.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="ecommerce">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Avisa cuando un producto se está por quedar sin stock.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="gastronomia">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Arma el pedido a proveedores con lo que falta según lo que se consumió.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="todos">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Re-contacta al cliente que no vuelve hace seis meses.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="servicios">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Manda el recordatorio de pago y registra cuando entra.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="salud">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Mantiene la lista de espera y le escribe al primero cuando se libera un turno.</p>
+          </article>
+          <article class="task" data-lane="ops" data-rubro="todos">
+            <span class="task-lane ops">Ejecuta</span>
+            <p>Junta lo que pasó en el día y te lo deja resumido antes de que cierres.</p>
+          </article>
         </div>
 
+        <p class="task-foot reveal">¿La tuya no está en la lista? Es exactamente la pregunta que respondemos en el diagnóstico. <a href="#contacto">Contanos cuál es →</a></p>
       </div>
     </section>
 
@@ -547,7 +552,7 @@
         <div class="foot-col">
           <p class="k">Empresa</p>
           <ul>
-            <li><a href="#caso">Caso real</a></li>
+            <li><a href="#tareas">Qué automatizamos</a></li>
             <li><a href="#proceso">Cómo trabajamos</a></li>
             <li><a href="#preguntas">Preguntas</a></li>
             <li><a href="#contacto">Contacto</a></li>
