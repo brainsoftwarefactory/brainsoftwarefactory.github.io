@@ -21,7 +21,8 @@ las tareas de tu operación — 24/7, sobre infraestructura dedicada.
 
 ## Sitio
 
-Landing de una sola página más la política de privacidad, sin dependencias de
+Landing de una sola página más las páginas legales que lee Meta (privacidad y
+eliminación de datos), sin dependencias de
 frameworks. HTML + CSS + JS vanilla con separación de responsabilidades y
 tipografía web. El chat es el widget oficial de Chatwoot
 (`chatwoot.brain.com.ar`, inbox «Sitio web») y el formulario envía a n8n
@@ -34,6 +35,7 @@ inbox «Formulario web» de Chatwoot. Todo corre en la VPS de producción.
 brainsoftwarefactory.github.io/
 ├── index.html                 # Landing (solo estructura)
 ├── privacidad.html            # Política de privacidad (la lee Meta)
+├── eliminacion-de-datos.html  # Cómo pedir la eliminación de datos (la lee Meta)
 ├── assets/
 │   ├── css/
 │   │   └── main.css           # Design system + estilos de ambas páginas
