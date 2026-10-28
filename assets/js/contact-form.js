@@ -1,6 +1,8 @@
 /**
  * Contact Form - n8n Webhook
- * Envía los datos del formulario al webhook de n8n en formato JSON
+ * Envía los datos del formulario al webhook de n8n en formato JSON.
+ * Filtra bots sin servicios externos: si el honeypot trae texto o el envío
+ * llega demasiado rápido, muestra "enviado" y no manda nada.
  */
 (function () {
   "use strict";
@@ -9,8 +11,13 @@
   // (webhook.brain.com.ar → crea la conversación en Chatwoot, inbox "Sitio web").
   const WEBHOOK_URL = "https://webhook.brain.com.ar/webhook/contacto-web";
 
+  // A person needs more than this to fill four fields.
+  const MIN_FILL_MS = 3000;
+
   const form = document.getElementById("contact-form");
   if (!form) return;
+
+  const loadedAt = Date.now();
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -28,6 +35,14 @@
     loadingEl.classList.remove("d-block");
     errorEl.classList.remove("d-block");
     sentEl.classList.remove("d-block");
+
+    const hpEl = document.getElementById("hpInput");
+    const honeypot = hpEl ? hpEl.value : "";
+    if (honeypot || Date.now() - loadedAt < MIN_FILL_MS) {
+      sentEl.classList.add("d-block");
+      form.reset();
+      return;
+    }
 
     // Mostrar loading
     loadingEl.classList.add("d-block");

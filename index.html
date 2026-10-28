@@ -516,6 +516,11 @@
               <label for="messageInput">Mensaje</label>
               <textarea id="messageInput" name="message" placeholder="Contanos dónde estás perdiendo tiempo o clientes" required></textarea>
             </div>
+            <!-- Honeypot: hidden from people; a bot that fills it is dropped by contact-form.js. -->
+            <div class="field-hp" aria-hidden="true">
+              <label for="hpInput">No completar</label>
+              <input type="text" id="hpInput" name="hp_field" tabindex="-1" autocomplete="off">
+            </div>
             <div class="form-status" aria-live="polite">
               <div class="loading">Enviando…</div>
               <div class="error-message"></div>
