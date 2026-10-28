@@ -36,7 +36,8 @@
     errorEl.classList.remove("d-block");
     sentEl.classList.remove("d-block");
 
-    const honeypot = document.getElementById("hpInput").value;
+    const hpEl = document.getElementById("hpInput");
+    const honeypot = hpEl ? hpEl.value : "";
     if (honeypot || Date.now() - loadedAt < MIN_FILL_MS) {
       sentEl.classList.add("d-block");
       form.reset();
