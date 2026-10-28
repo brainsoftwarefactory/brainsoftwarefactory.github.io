@@ -545,6 +545,13 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.028em; line-height: 1.06; text
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgba(0, 152, 255, 0.20);
 }
+.field-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .form-status { margin-bottom: 14px; }
 .form-status .loading,
 .form-status .error-message,
