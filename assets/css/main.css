@@ -898,3 +898,25 @@ button, input, textarea { font-family: inherit; font-size: inherit; color: inher
 @media (max-height: 920px) { .stage-sticky > div:last-child { transform: scale(.86); } }
 @media (max-height: 800px) { .stage-sticky > div:last-child { transform: scale(.76); } .stage-dots { top: 96px; } }
 @media (max-height: 700px) { .stage-sticky > div:last-child { transform: scale(.66); } }
+
+/* ─── solid nav + icons without backgrounds ─── */
+.nav-inner {
+  background: #FFFFFF;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+  box-shadow: 0 0 0 1px rgba(4, 7, 13, 0.07), 0 6px 24px rgba(4, 7, 13, 0.06);
+}
+.nav.is-scrolled .nav-inner { background: #FFFFFF; box-shadow: 0 0 0 1px rgba(4, 7, 13, 0.08), 0 10px 30px rgba(4, 7, 13, 0.10); }
+
+.badge-ico { width: auto; height: auto; border-radius: 0; background: none !important; color: var(--royal); }
+.badge-ico svg { width: 44px; height: 44px; }
+.own-card:nth-child(1) .badge-ico { color: var(--blue); }
+.own-card:nth-child(3) .badge-ico { color: var(--ink-deep); }
+
+.ch-ico, .ch.wide .ch-ico { width: auto; height: auto; border-radius: 0; background: none; place-items: start; }
+.ch-ico img, .ch-ico svg { width: 40px; height: 40px; }
+.ch.wide .ch-ico svg { width: 52px; height: 52px; color: var(--white); }
+
+.float-chip { padding: 10px 16px 10px 14px; }
+.float-chip img, .float-chip .gico { width: 22px; height: 22px; padding: 0; border-radius: 0; background: none; }
+
+.contact-list img, .contact-list svg { width: 28px; height: 28px; }
