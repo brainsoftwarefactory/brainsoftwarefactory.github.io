@@ -429,39 +429,74 @@
       </div>
     </section>
 
-    <!-- ═══════════════ TASKS BY INDUSTRY ═══════════════ -->
+    <!-- ═══════════════ BY INDUSTRY ═══════════════ -->
     <section class="section tasks" id="tareas">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="h2 reveal">Todo esto ya lo hace un asistente.</h2>
-          <p class="lead reveal d1">Elegí tu rubro.</p>
+          <h2 class="h2 reveal">Hecho para tu rubro.</h2>
+          <p class="lead reveal d1">Elegí el tuyo.</p>
         </div>
-
-        <div class="task-filters reveal" role="tablist" aria-label="Filtrar por rubro">
-          <button type="button" class="task-filter is-active" data-rubro="todos" role="tab" aria-selected="true">Todos</button>
-          <button type="button" class="task-filter" data-rubro="salud" role="tab" aria-selected="false">Salud y estética</button>
-          <button type="button" class="task-filter" data-rubro="ecommerce" role="tab" aria-selected="false">Comercio</button>
-          <button type="button" class="task-filter" data-rubro="gastronomia" role="tab" aria-selected="false">Gastronomía</button>
-          <button type="button" class="task-filter" data-rubro="servicios" role="tab" aria-selected="false">Servicios</button>
-          <button type="button" class="task-filter" data-rubro="inmobiliaria" role="tab" aria-selected="false">Inmobiliaria</button>
-          <button type="button" class="task-filter" data-rubro="barrios" role="tab" aria-selected="false">Barrios y consorcios</button>
+        <div class="rubros reveal">
+          <div class="rubro-tabs" role="tablist" aria-label="Rubros" id="rubroTabs">
+            <button type="button" class="rubro-tab is-active" role="tab" id="tab-salud" aria-controls="panel-salud" aria-selected="true">Salud y estética<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="button" class="rubro-tab" role="tab" id="tab-comercio" aria-controls="panel-comercio" aria-selected="false" tabindex="-1">Comercio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="button" class="rubro-tab" role="tab" id="tab-gastronomia" aria-controls="panel-gastronomia" aria-selected="false" tabindex="-1">Gastronomía<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="button" class="rubro-tab" role="tab" id="tab-servicios" aria-controls="panel-servicios" aria-selected="false" tabindex="-1">Servicios<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="button" class="rubro-tab" role="tab" id="tab-inmobiliaria" aria-controls="panel-inmobiliaria" aria-selected="false" tabindex="-1">Inmobiliaria<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            <button type="button" class="rubro-tab" role="tab" id="tab-consorcios" aria-controls="panel-consorcios" aria-selected="false" tabindex="-1">Barrios y consorcios<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+          <div class="rubro-stage">
+          <div class="rubro-panel" role="tabpanel" id="panel-salud" aria-labelledby="tab-salud">
+            <div class="rubro-chat">
+              <span class="rubro-via">Por WhatsApp</span>
+              <p class="b in">¿Tenés turno el jueves?</p>
+              <p class="b out">Sí, 10:30 o 16:00. ¿Cuál te guardo?</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Turnos sin llamadas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Confirma el día anterior</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Lista de espera</li></ul>
+          </div>
+          <div class="rubro-panel" role="tabpanel" id="panel-comercio" aria-labelledby="tab-comercio" hidden>
+            <div class="rubro-chat">
+              <span class="rubro-via">Por Instagram</span>
+              <p class="b in">¿Tienen talle M?</p>
+              <p class="b out">Sí, en negro y azul. ¿Te lo reservo?</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Precio y stock al instante</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Estado del pedido</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Aviso de stock bajo</li></ul>
+          </div>
+          <div class="rubro-panel" role="tabpanel" id="panel-gastronomia" aria-labelledby="tab-gastronomia" hidden>
+            <div class="rubro-chat">
+              <span class="rubro-via">Por WhatsApp</span>
+              <p class="b in">Mesa para 4 el sábado</p>
+              <p class="b out">Listo, sábado 21 h. ¡Te esperamos!</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Reservas de mesa</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Menú y horarios</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Pedidos a proveedores</li></ul>
+          </div>
+          <div class="rubro-panel" role="tabpanel" id="panel-servicios" aria-labelledby="tab-servicios" hidden>
+            <div class="rubro-chat">
+              <span class="rubro-via">En el chat de tu web</span>
+              <p class="b in">Mi equipo no anda</p>
+              <p class="b out">Abrí el caso #2210. Un técnico te contacta hoy.</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Reclamos con número</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Aviso de cada avance</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Reporte semanal</li></ul>
+          </div>
+          <div class="rubro-panel" role="tabpanel" id="panel-inmobiliaria" aria-labelledby="tab-inmobiliaria" hidden>
+            <div class="rubro-chat">
+              <span class="rubro-via">Por teléfono</span>
+              <p class="b in">¿Sigue disponible el 2 ambientes?</p>
+              <p class="b out">Sí. ¿Lo visitás el martes a las 18?</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Filtra interesados</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Coordina visitas</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Envía la ubicación</li></ul>
+          </div>
+          <div class="rubro-panel" role="tabpanel" id="panel-consorcios" aria-labelledby="tab-consorcios" hidden>
+            <div class="rubro-chat">
+              <span class="rubro-via">En el chat de tu web</span>
+              <p class="b in">Se cortó el agua en el 3°</p>
+              <p class="b out">Caso #4821 en Mantenimiento. Te aviso cada avance.</p>
+            </div>
+            <ul class="rubro-points"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Pedidos de vecinos</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Derivación por área</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Estado de cada caso</li></ul>
+          </div>
+          </div>
         </div>
-
-        <div class="task-grid" id="taskGrid">
-          <article class="task" data-lane="att" data-rubro="todos"><span class="tag">Atiende</span><p>Responde «¿a qué hora abren?» a las 2 de la mañana, sin despertar a nadie.</p></article>
-          <article class="task" data-lane="att" data-rubro="salud servicios"><span class="tag">Atiende</span><p>Saca, reprograma y cancela turnos contra tu agenda, en el momento.</p></article>
-          <article class="task" data-lane="att" data-rubro="ecommerce"><span class="tag">Atiende</span><p>Le dice al cliente dónde está su pedido sin que nadie abra el sistema.</p></article>
-          <article class="task" data-lane="att" data-rubro="gastronomia"><span class="tag">Atiende</span><p>Toma la reserva, confirma la mesa y avisa si se libera un lugar.</p></article>
-          <article class="task" data-lane="att" data-rubro="ecommerce"><span class="tag">Atiende</span><p>Busca el producto en tu catálogo y responde precio y disponibilidad.</p></article>
-          <article class="task" data-lane="att" data-rubro="inmobiliaria"><span class="tag">Atiende</span><p>Filtra al interesado —zona, presupuesto, si necesita crédito— antes de pasártelo.</p></article>
-          <article class="task" data-lane="att" data-rubro="servicios barrios"><span class="tag">Atiende</span><p>Abre el reclamo, le pone número y avisa al cliente cada vez que avanza.</p></article>
-          <article class="task" data-lane="att" data-rubro="barrios"><span class="tag">Atiende</span><p>Recibe el pedido del vecino, lo deriva al área que corresponde y le da su número de caso.</p></article>
-          <article class="task" data-lane="att" data-rubro="todos"><span class="tag">Atiende</span><p>Atiende el teléfono, entiende la consulta y la resuelve o la transfiere.</p></article>
-          <article class="task" data-lane="ops" data-rubro="todos"><span class="tag">Ejecuta</span><p>Arma el reporte del lunes y lo manda a quien lo tiene que leer.</p></article>
-          <article class="task" data-lane="ops" data-rubro="ecommerce"><span class="tag">Ejecuta</span><p>Avisa cuando un producto se está por quedar sin stock.</p></article>
-          <article class="task" data-lane="ops" data-rubro="salud"><span class="tag">Ejecuta</span><p>Mantiene la lista de espera y le escribe al primero cuando se libera un turno.</p></article>
-        </div>
-        <p class="task-more">¿La tuya no está en la lista? Es exactamente lo que vemos en la demo. <a href="#contacto">Contanos cuál es →</a></p>
+        <p class="task-more">¿No está tu rubro? <a href="#contacto">Contanos →</a></p>
       </div>
     </section>
 

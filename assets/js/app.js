@@ -200,30 +200,30 @@
     chatState.observe(document.body, { attributes: true, subtree: true, attributeFilter: ["class"] });
   }
 
-  /* ─── tasks by industry ─── */
-  const taskGrid = document.getElementById("taskGrid");
-  if (taskGrid) {
-    const filters = document.querySelectorAll(".task-filter");
-    const tasks = taskGrid.querySelectorAll(".task");
-    function applyRubro(rubro) {
-      tasks.forEach(function (task) {
-        const tags = (task.dataset.rubro || "").split(" ");
-        // Tasks tagged "todos" fit any industry.
-        task.hidden = rubro !== "todos" &&
-          tags.indexOf(rubro) === -1 && tags.indexOf("todos") === -1;
-      });
-    }
-    filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        filters.forEach(function (b) {
-          const on = b === btn;
-          b.classList.toggle("is-active", on);
-          b.setAttribute("aria-selected", on ? "true" : "false");
-        });
-        applyRubro(btn.dataset.rubro);
-      });
+  /* ─── by industry: accessible tabs ─── */
+  const rubroTabs = Array.prototype.slice.call(document.querySelectorAll(".rubro-tab"));
+  function selectRubro(tab, focus) {
+    rubroTabs.forEach(function (t) {
+      const on = t === tab;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (panel) panel.hidden = !on;
     });
+    if (focus) tab.focus();
   }
+  rubroTabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectRubro(tab, false); });
+    tab.addEventListener("keydown", function (e) {
+      const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      if (e.key in keys) {
+        e.preventDefault();
+        selectRubro(rubroTabs[(i + keys[e.key] + rubroTabs.length) % rubroTabs.length], true);
+      } else if (e.key === "Home") { e.preventDefault(); selectRubro(rubroTabs[0], true); }
+      else if (e.key === "End") { e.preventDefault(); selectRubro(rubroTabs[rubroTabs.length - 1], true); }
+    });
+  });
 
   /* ─── reveals ─── */
   const reveals = document.querySelectorAll(".reveal");
