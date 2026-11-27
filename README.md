@@ -40,36 +40,44 @@ brainsoftwarefactory.github.io/
 │   ├── css/
 │   │   └── main.css           # Design system + estilos de ambas páginas
 │   ├── js/
-│   │   ├── app.js             # Menú mobile + reveals on-scroll
+│   │   ├── app.js             # Menú, celulares animados, scroll de casos, filtros, reveals
+│   │   ├── stories.js         # Conversaciones de ejemplo de los celulares
 │   │   └── contact-form.js    # Envío del formulario (webhook n8n → Chatwoot)
+│   ├── fonts/                 # Plus Jakarta Sans y Spline Sans Mono (OFL)
 │   └── img/
-│       ├── brain-logo.png     # Logo / favicon / imagen social
-│       └── clients/           # Logos de clientes (tinta clara, fondo oscuro)
+│       ├── brain-logo-horizontal-claro.png  # Logo primario
+│       ├── brain-isotipo-512.png            # Favicon
+│       ├── brain-logo.png                   # Imagen social
+│       └── canales/                         # Íconos de canales
 ├── docs/                      # Documentación interna — EXCLUIDA del deploy
 └── .github/                   # Deploy automático
 ```
 
 ## Identidad
 
-Los colores de marca salen del logo, muestreados píxel por píxel.
+Tema claro primario de la marca 1.1 (`marca/tokens.json` del repositorio brain):
+fondo crema, logo original negro, bloques planos en los azules del isotipo y
+títulos grandes. Rediseño de DEVOPS-427, con ManyChat como referencia de estilo.
 
 | Token | Valor | Uso |
 |-------|-------|-----|
-| Fondo | `#0A0C12` | Base near-black |
-| Azul brillante | `#0098FF` | Acción primaria, acentos, cifras |
-| Azul royal | `#225DC6` | Profundidad, halos |
-| Carbón | `#2B2B2B` | Del logo |
-| Texto | `#F1F4FA` / `#9AA5B7` | Contrastes AA verificados |
-| Tipografía | Plus Jakarta Sans · Spline Sans Mono | |
+| Crema | `#F5F1E8` | Fondo base |
+| Azul brillante | `#0098FF` | Bandas de color, acentos |
+| Azul real | `#225DC6` | Tarjetas destacadas, botones secundarios |
+| Grafito | `#2B2B2B` / `#04070D` | Texto, botones principales |
+| Tipografía | Plus Jakarta Sans 800 (títulos) · Spline Sans Mono (etiquetas y botones) | Servidas desde `assets/fonts/` (OFL) |
 
-Sin violeta y sin gradientes de texto: no existen en la marca.
+Los íconos de canales de terceros (`assets/img/canales/`) salen de Simple Icons
+(CC0), el mismo paquete que usa la maqueta de Platform; los genéricos son propios.
 
 ## Contenido
 
 - **Sin precios ni planes publicados.** La conversión pasa por el diagnóstico.
-- La sección de clientes arranca con Botulinic y tiene lugares reservados
-  para los próximos logos (`assets/img/clients/`, tinta clara `#E9EEF7`).
-- Canales que se comunican: WhatsApp y web. No se menciona Instagram.
+- «Platform» es un nombre interno: la web no lo usa. Tampoco menciona Flow.
+- Sin clientes nombrados: las conversaciones de ejemplo (`assets/js/stories.js`)
+  son de negocios ficticios.
+- Canales que se muestran: WhatsApp, Instagram, Messenger, TikTok, Telegram,
+  correo, chat web, SMS, teléfono, videollamada y API.
 
 ## Desarrollo
 
