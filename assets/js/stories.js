@@ -8,8 +8,9 @@ window.BRAIN_STORIES = {
   turnos: {
     skin: "whatsapp",
     title: "Taller Norte",
-    subtitle: "Asistente · en línea",
-    via: "assets/img/canales/whatsapp.svg",
+    subtitle: "en línea",
+    initials: "TN",
+    color: "linear-gradient(135deg,#225DC6,#0098FF)",
     messages: [
       { from: "in", text: "Hola! Quería un turno para el service del auto la semana que viene" },
       { from: "out", text: "¡Hola, Sofía! Tengo estos horarios libres:", options: ["Mar 10:30", "Mié 16:00", "Jue 9:15"] },
@@ -20,9 +21,10 @@ window.BRAIN_STORIES = {
   },
   ventas: {
     skin: "instagram",
-    title: "repuestos.delsur",
-    subtitle: "Mensaje directo",
-    via: "assets/img/canales/instagram.svg",
+    title: "Repuestos del Sur",
+    subtitle: "repuestos.delsur",
+    initials: "RS",
+    color: "linear-gradient(135deg,#F58529,#DD2A7B 55%,#8134AF)",
     messages: [
       { from: "in", text: "¿Tienen pastillas de freno para un Gol Trend 2015?" },
       { from: "out", card: { title: "Pastillas delanteras", body: "Compatibles con Gol Trend 2012 a 2018 · En stock" } },
@@ -35,8 +37,10 @@ window.BRAIN_STORIES = {
   mesa: {
     skin: "web",
     title: "Administración",
-    subtitle: "Chat del sitio",
-    via: "assets/img/canales/web.svg",
+    subtitle: "Respondemos al instante",
+    initials: "A",
+    url: "administracion.com.ar",
+    color: "linear-gradient(135deg,#225DC6,#0098FF)",
     messages: [
       { from: "in", text: "Hola, hay una filtración en el techo del 4° B" },
       { from: "out", text: "Lo registré como caso #4821 en Mantenimiento. ¿Me mandás una foto?" },
@@ -49,7 +53,7 @@ window.BRAIN_STORIES = {
     skin: "call",
     title: "Llamada entrante",
     subtitle: "Asistente de voz",
-    call: { name: "+54 11 5555-0192", status: "Asistente de voz · 01:24" },
+    call: { label: "Asistente de voz", name: "Inmobiliaria Centro", status: "01:24" },
     messages: [
       { from: "in", text: "Quería saber si el sábado atienden" },
       { from: "out", text: "Sí, los sábados atendemos de 9 a 13. ¿Querés que te agende una visita?" },
@@ -60,8 +64,8 @@ window.BRAIN_STORIES = {
   },
   video: {
     skin: "video",
-    title: "Videollamada",
-    subtitle: "Desde el chat del sitio",
+    title: "Laura · Atención",
+    subtitle: "Videollamada · 02:10",
     video: true,
     messages: [
       { from: "sys", text: "Martín pasó del chat a videollamada" },

@@ -48,117 +48,26 @@
     btn.replaceChild(roll, textNode);
   });
 
-  /* ─── phone conversations ─── */
+  /* ─── phone conversations (screens built by phone.js) ─── */
   function el(tag, cls, text) {
     const node = document.createElement(tag);
     if (cls) node.className = cls;
     if (text) node.textContent = text;
     return node;
   }
-
-  function clock(i) {
-    const m = 12 + i * 2;
-    return "10:" + (m < 10 ? "0" + m : m);
-  }
-
-  function buildMessage(msg, i) {
-    if (msg.from === "sys") return el("div", "msg sys", msg.text);
-    const node = el("div", "msg" + (msg.from === "out" ? " out" : "") + (msg.card ? " card" : ""));
-    if (msg.card) {
-      node.appendChild(el("div", "card-img", msg.card.title));
-      const body = el("div", "card-body", msg.card.body);
-      node.appendChild(body);
-    } else {
-      node.appendChild(document.createTextNode(msg.text));
-    }
-    if (msg.options) {
-      const opts = el("div", "opts");
-      msg.options.forEach(function (o) { opts.appendChild(el("span", "", o)); });
-      node.appendChild(opts);
-    }
-    node.appendChild(el("small", "", clock(i)));
-    return node;
-  }
-
-  function buildScreen(story) {
-    const screen = el("div", "screen");
-    screen.dataset.skin = story.skin;
-    const status = el("div", "status");
-    status.innerHTML = "<span>9:41</span><span class=\"sig\"><svg viewBox=\"0 0 16 11\" fill=\"currentColor\"><rect x=\"0\" y=\"7\" width=\"3\" height=\"4\" rx=\"1\"/><rect x=\"4.3\" y=\"5\" width=\"3\" height=\"6\" rx=\"1\"/><rect x=\"8.6\" y=\"2.5\" width=\"3\" height=\"8.5\" rx=\"1\"/><rect x=\"13\" y=\"0\" width=\"3\" height=\"11\" rx=\"1\"/></svg><span class=\"bat\"></span></span>";
-    screen.appendChild(status);
-    const bar = el("div", "screen-bar");
-    if (!story.call && !story.video) {
-      const back = el("span");
-      back.innerHTML = "<svg class=\"back\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 5l-7 7 7 7\"/></svg>";
-      bar.appendChild(back.firstChild);
-    }
-    const avatar = el("span", "avatar");
-    const logo = document.createElement("img");
-    logo.src = "assets/img/brain-isotipo-512.png";
-    logo.alt = "";
-    avatar.appendChild(logo);
-    bar.appendChild(avatar);
-    const who = el("div");
-    who.appendChild(el("b", "", story.title));
-    who.appendChild(el("small", "", story.subtitle));
-    bar.appendChild(who);
-    if (story.via) {
-      const via = document.createElement("img");
-      via.className = "via";
-      via.src = story.via;
-      via.alt = "";
-      bar.appendChild(via);
-    }
-    screen.appendChild(bar);
-
-    if (story.call) {
-      const hero = el("div", "call-hero");
-      const ring = el("div", "ring");
-      ring.innerHTML = "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.9\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 3.5h3.2l1.6 4.3-2.1 1.4a11.5 11.5 0 0 0 7.1 7.1l1.4-2.1 4.3 1.6V19a1.6 1.6 0 0 1-1.7 1.6A16.4 16.4 0 0 1 3.4 5.2 1.6 1.6 0 0 1 5 3.5Z\"/></svg>";
-      hero.appendChild(ring);
-      hero.appendChild(el("b", "", story.call.name));
-      hero.appendChild(el("small", "", story.call.status));
-      screen.appendChild(hero);
-    }
-    if (story.video) {
-      const tiles = el("div", "video-tiles");
-      const them = el("div", "video-tile");
-      them.appendChild(el("span", "rec", "Grabando"));
-      them.appendChild(el("span", "face", "M"));
-      const me = el("div", "video-tile me");
-      me.appendChild(el("span", "face", "Vos"));
-      tiles.appendChild(them);
-      tiles.appendChild(me);
-      screen.appendChild(tiles);
-    }
-    const chat = el("div", "chat");
-    screen.appendChild(chat);
-    if (story.call || story.video) {
-      const controls = el("div", "call-controls");
-      controls.innerHTML =
-        "<span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"11\" rx=\"3\"/><path d=\"M5 11a7 7 0 0 0 14 0M12 18v3\"/></svg></span>" +
-        "<span class=\"end\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 9c-3.3 0-6.4 1-8.6 2.8-.5.4-.5 1.1-.1 1.6l1.6 1.9c.4.4 1 .5 1.5.2l2-1.2c.4-.2.6-.6.6-1v-1.6a12 12 0 0 1 6 0v1.6c0 .4.2.8.6 1l2 1.2c.5.3 1.1.2 1.5-.2l1.6-1.9c.4-.5.4-1.2-.1-1.6C18.4 10 15.3 9 12 9Z\"/></svg></span>" +
-        "<span><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M4 9v6h4l5 4V5L8 9H4Z\"/><path d=\"M16.5 8.5a5 5 0 0 1 0 7\"/></svg></span>";
-      screen.appendChild(controls);
-    } else {
-      const composer = el("div", "composer");
-      composer.innerHTML = "<span class=\"field-fake\">Mensaje</span><span class=\"send\"><svg viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M3.4 20.4 21 12 3.4 3.6 3.4 10l12.6 2-12.6 2z\"/></svg></span>";
-      screen.appendChild(composer);
-    }
-    return { screen: screen, chat: chat };
-  }
+  const Phone = window.BrainPhone;
 
   // Plays a story inside a .phone. Returns a stop function.
   function play(phone, key, loop) {
     const story = stories[key];
     if (!story) return function () {};
     phone.innerHTML = "";
-    const built = buildScreen(story);
+    const built = Phone.build(story);
     phone.appendChild(built.screen);
     const chat = built.chat;
 
     if (reduced) {
-      story.messages.forEach(function (m, i) { chat.appendChild(buildMessage(m, i)); });
+      story.messages.forEach(function (m, i) { chat.appendChild(Phone.message(m, i, story)); });
       return function () {};
     }
 
@@ -166,26 +75,26 @@
     let stopped = false;
     function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
 
+    const fixed = Array.prototype.slice.call(chat.children);
     function run() {
       chat.innerHTML = "";
+      fixed.forEach(function (n) { chat.appendChild(n); });
       let t = 350;
       story.messages.forEach(function (m, i) {
         if (m.from === "out") {
           later(function () {
             if (stopped) return;
-            const typing = el("div", "typing");
-            typing.innerHTML = "<i></i><i></i><i></i>";
-            chat.appendChild(typing);
+            chat.appendChild(Phone.typing());
           }, t);
           t += 900;
           later(function () {
             if (stopped) return;
             const typing = chat.querySelector(".typing");
             if (typing) typing.remove();
-            chat.appendChild(buildMessage(m, i));
+            chat.appendChild(Phone.message(m, i, story));
           }, t);
         } else {
-          later(function () { if (!stopped) chat.appendChild(buildMessage(m, i)); }, t);
+          later(function () { if (!stopped) chat.appendChild(Phone.message(m, i, story)); }, t);
         }
         t += m.from === "in" ? 1100 : 1300;
       });
@@ -291,30 +200,30 @@
     chatState.observe(document.body, { attributes: true, subtree: true, attributeFilter: ["class"] });
   }
 
-  /* ─── tasks by industry ─── */
-  const taskGrid = document.getElementById("taskGrid");
-  if (taskGrid) {
-    const filters = document.querySelectorAll(".task-filter");
-    const tasks = taskGrid.querySelectorAll(".task");
-    function applyRubro(rubro) {
-      tasks.forEach(function (task) {
-        const tags = (task.dataset.rubro || "").split(" ");
-        // Tasks tagged "todos" fit any industry.
-        task.hidden = rubro !== "todos" &&
-          tags.indexOf(rubro) === -1 && tags.indexOf("todos") === -1;
-      });
-    }
-    filters.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        filters.forEach(function (b) {
-          const on = b === btn;
-          b.classList.toggle("is-active", on);
-          b.setAttribute("aria-selected", on ? "true" : "false");
-        });
-        applyRubro(btn.dataset.rubro);
-      });
+  /* ─── by industry: accessible tabs ─── */
+  const rubroTabs = Array.prototype.slice.call(document.querySelectorAll(".rubro-tab"));
+  function selectRubro(tab, focus) {
+    rubroTabs.forEach(function (t) {
+      const on = t === tab;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (panel) panel.hidden = !on;
     });
+    if (focus) tab.focus();
   }
+  rubroTabs.forEach(function (tab, i) {
+    tab.addEventListener("click", function () { selectRubro(tab, false); });
+    tab.addEventListener("keydown", function (e) {
+      const keys = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 };
+      if (e.key in keys) {
+        e.preventDefault();
+        selectRubro(rubroTabs[(i + keys[e.key] + rubroTabs.length) % rubroTabs.length], true);
+      } else if (e.key === "Home") { e.preventDefault(); selectRubro(rubroTabs[0], true); }
+      else if (e.key === "End") { e.preventDefault(); selectRubro(rubroTabs[rubroTabs.length - 1], true); }
+    });
+  });
 
   /* ─── reveals ─── */
   const reveals = document.querySelectorAll(".reveal");
