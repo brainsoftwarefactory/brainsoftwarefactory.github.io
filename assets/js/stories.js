@@ -28,10 +28,10 @@ window.BRAIN_STORIES = {
     messages: [
       { from: "in", text: "¿Tienen pastillas de freno para un Gol Trend 2015?" },
       { from: "out", card: { title: "Pastillas delanteras", body: "Compatibles con Gol Trend 2012 a 2018 · En stock" } },
-      { from: "out", text: "¿Te las reservo para retirar o preferís envío?" },
-      { from: "in", text: "Envío a Lanús" },
-      { from: "out", text: "Perfecto. Te paso el resumen del pedido y un vendedor te confirma el envío en un rato 🚚" },
-      { from: "sys", text: "Oportunidad creada · Ventas" }
+      { from: "out", text: "¿Te armo el presupuesto con envío o retirás?" },
+      { from: "in", text: "Con envío a Lanús" },
+      { from: "out", text: "Listo, te mando el presupuesto en PDF 📄 Total con envío: $ 48.600. Si lo confirmás, te reservo el stock." },
+      { from: "sys", text: "Presupuesto enviado · Ventas" }
     ]
   },
   mesa: {
